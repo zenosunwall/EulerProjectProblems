@@ -24,6 +24,8 @@ public class Solution2 {
 	
 	public static void main(String[] args)
 	{
-		System.out.println(sumMulitplesToMax(3, 999) + sumMulitplesToMax(5, 999) - sumMulitplesToMax(15, 999));
+		System.out.println(sumMulitplesToMax(3, 100) 
+				+ sumMulitplesToMax(5, 100) 
+				- sumMulitplesToMax(15, 100));
 	}
 }

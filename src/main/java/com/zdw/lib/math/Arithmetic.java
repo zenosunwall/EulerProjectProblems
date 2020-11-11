@@ -1,7 +1,9 @@
 package com.zdw.lib.math;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Arithmetic {
@@ -118,5 +120,41 @@ public class Arithmetic {
 		}
 		
 		return factors;
+	}
+	
+	public static List<Integer> generatePrimesToN(int n)
+	{
+		List<Integer> primes = new ArrayList<>();
+		// 2 is the only even prime
+		primes.add(2);
+		
+		// 3 is the first odd prime
+		int testCase = 3;
+		
+		while(testCase < n)
+		{
+			if (isPrime(testCase, primes))
+			{
+				primes.add(testCase);
+			}
+			testCase += 2;
+		}
+		return primes;
+	}
+	
+	public static boolean isPrime(int number, List<Integer> primes)
+	{
+		for (int prime : primes)
+		{
+			if (prime * prime > number)
+			{
+				return true;
+			}
+			if (number % prime == 0)
+			{
+				break;
+			}
+		}
+		return false;
 	}
 }
